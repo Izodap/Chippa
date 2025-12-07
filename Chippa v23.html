@@ -1,0 +1,915 @@
+<!DOCTYPE html><html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chippa: Catálogo de Productos - Cose y Crea con Magia</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .header-container {
+            background-color: #ffffff;
+            padding: 40px 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .logo {
+            max-width: 350px;
+            height: auto;
+            border-radius: 8px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #E91E63;
+            font-size: 2.8rem;
+            margin-top: 20px;
+            font-weight: 800;
+        }
+        .tagline {
+            color: #7B1FA2;
+            font-size: 1.3rem;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        .section-title {
+            color: #E91E63;
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #E91E63;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 480px;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+        .product-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .product-name {
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .product-description {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        .product-price {
+            color: #E91E63;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: auto;
+        }
+        .footer {
+            background-color: #7B1FA2;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        .footer a {
+            color: #FFC107;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .footer a:hover {
+            color: #ffffff;
+        }
+        /* Estilos específicos para impresión */
+        @media print {
+            body {
+                background-color: #ffffff;
+                color: #000000;
+            }
+            .header-container, .footer {
+                background-color: #ffffff !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                padding: 10px 0 !important;
+            }
+            .header-container h1, .header-container p.tagline {
+                color: #000000 !important;
+            }
+            .section-title {
+                color: #000000 !important;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 5px;
+                margin-bottom: 20px;
+            }
+            .section-title::after {
+                display: none;
+            }
+            .product-card {
+                box-shadow: none !important;
+                border: 1px solid #eee;
+                page-break-inside: avoid;
+                min-height: auto;
+                padding: 15px;
+            }
+            .product-image {
+                max-height: 200px;
+                object-fit: contain;
+            }
+            .product-name {
+                font-size: 1.2rem;
+                font-weight: 700;
+                color: #000000;
+            }
+            .product-description {
+                font-size: 0.9rem;
+                color: #333;
+            }
+            .product-price {
+                font-size: 1.4rem;
+                color: #000000;
+            }
+            .footer {
+                color: #000000 !important;
+                background-color: #ffffff !important;
+                border-radius: 0 !important;
+                padding: 10px 0 !important;
+            }
+            .footer a {
+                color: #000000 !important;
+                text-decoration: underline !important;
+            }
+        }
+    </style>
+<script defer="" data-domain="chippa.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script><meta property="og:url" content="https://chippa.tiiny.site/" data-id="th-modified"><meta property="og:type" content="website" data-id="th-modified"></head>
+<body class="bg-gray-100">
+    
+    <header class="header-container">
+        <img src="https://i.ibb.co/TMSwfNwS/image-f13c85.png" alt="Logo de Chippa: Cose y Crea con Magia" class="logo">
+
+        <h1 class="text-pink-600">
+            Chippa
+        </h1>
+        <p class="tagline">
+            Cose y Crea con Magia.
+            Cada pieza es única, hecha a mano y con dedicación.
+        </p>
+    </header>
+
+    <main class="container mx-auto px-4">
+
+        
+        <h2 class="section-title">Feliz Navidad</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/Y4R4wMxV/Imagen-de-Whats-App-2025-11-02-a-las-10-51-59-3adf6d57.jpg" alt="Pie de árbol de Navidad" class="product-image">
+                <h3 class="product-name">Pie de Árbol de Navidad</h3>
+                <p class="product-description">Decorativo pie de árbol navideño, ideal para dar un toque festivo a tu hogar.</p>
+                <p class="product-price">€ 32.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/gMzNT1Cz/Imagen-de-Whats-App-2025-11-02-a-las-10-51-59-deeaf82c.jpg" alt="Lazo XL navideño" class="product-image">
+                <h3 class="product-name">Lazo XL</h3>
+                <p class="product-description">Gran lazo decorativo para adornar tu árbol o regalos navideños.</p>
+                <p class="product-price">€ 35.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/6VDWZK1/Imagen-de-Whats-App-2025-11-02-a-las-10-52-00-43b337e1.jpg" alt="Árboles de Navidad" class="product-image">
+                <h3 class="product-name">Árboles de Navidad</h3>
+                <p class="product-description">Pack de árboles navideños hechos a mano. También disponibles por separado.</p>
+                <p class="product-price">€ 38.00 (pack) / € 18.00 (pequeño) / € 23.00 (grande)</p>
+            </div>
+<div class="product-card">
+    <img src="https://i.ibb.co/wrr3PR7x/Whats-App-Image-2025-12-07-at-10-12-04-1.jpg" class="product-image">
+    <h3 class="product-name">Lazo XL</h3>
+    <p class="product-description">Lazo decorativo tamaño XL.</p>
+    <p class="product-price">€ 35.00</p>
+</div>
+
+<div class="product-card">
+    <img src="https://i.ibb.co/zTwdN0Sn/Whats-App-Image-2025-12-07-at-10-12-04-2.jpg" class="product-image">
+    <h3 class="product-name">Lazo M</h3>
+    <p class="product-description">Lazo decorativo tamaño M.</p>
+    <p class="product-price">€ 25.00</p>
+</div>
+
+<div class="product-card">
+    <img src="https://i.ibb.co/Z1Gt5cBC/Whats-App-Image-2025-12-07-at-10-12-04-3.jpg" class="product-image">
+    <h3 class="product-name">Lazo XL</h3>
+    <p class="product-description">Otra versión de Lazo XL.</p>
+    <p class="product-price">€ 35.00</p>
+</div>
+
+<div class="product-card">
+    <img src="https://i.ibb.co/fdZYFJHt/Whats-App-Image-2025-12-07-at-10-12-04-4.jpg" class="product-image">
+    <h3 class="product-name">Pack Navidad al completo</h3>
+    <p class="product-description">Pack completo navideño.</p>
+    <p class="product-price">€ 120.00</p>
+</div>
+
+<div class="product-card">
+    <img src="https://i.ibb.co/ccSZnb2V/Whats-App-Image-2025-12-07-at-10-12-04.jpg" class="product-image">
+    <h3 class="product-name">Bastidor decorativo navideño</h3>
+    <p class="product-description">Bordado personalizado.</p>
+    <p class="product-price">€ 8.50</p>
+</div>
+
+<div class="product-card">
+    <img src="https://i.ibb.co/whRLhSvM/Whats-App-Image-2025-12-07-at-10-12-05-2.jpg" class="product-image">
+    <h3 class="product-name">Corona navideña</h3>
+    <p class="product-description">Corona decorativa artesanal.</p>
+    <p class="product-price">€ 30.00</p>
+</div>
+
+<div class="product-card">
+    <img src="https://i.ibb.co/WpzgvQx5/Whats-App-Image-2025-12-07-at-10-12-05-3.jpg" class="product-image">
+    <h3 class="product-name">Traje pastorcilla</h3>
+    <p class="product-description">Traje artesanal.</p>
+    <p class="product-price">€ 50 - 70</p>
+</div>
+
+<div class="product-card">
+    <img src="https://i.ibb.co/FrbKdXP/Whats-App-Image-2025-12-07-at-10-12-05-4.jpg" class="product-image">
+    <h3 class="product-name">Traje pastorcillo</h3>
+    <p class="product-description">Traje tradicional infantil.</p>
+    <p class="product-price">€ 50 - 60</p>
+</div>
+
+<div class="product-card">
+    <img src="https://i.ibb.co/GfKhbcGH/Whats-App-Image-2025-12-07-at-10-12-05-5.jpg" class="product-image">
+    <h3 class="product-name">Pack trajes pastorcillos</h3>
+    <p class="product-description">Pack completo.</p>
+    <p class="product-price">€ 120 - 140</p>
+</div>
+
+<div class="product-card">
+    <img src="https://i.ibb.co/rRFRBWn3/Whats-App-Image-2025-12-07-at-10-12-06-1.jpg" class="product-image">
+    <h3 class="product-name">Zurrón / bolsa pastores</h3>
+    <p class="product-description">Bolsa tradicional de pastores.</p>
+    <p class="product-price">€ 8.50</p>
+            </div>
+        </div>
+        <h2 class="section-title">Bolsos y Accesorios Exclusivos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+	<div class="product-card">
+    	<img src="https://i.ibb.co/jkDC04WV/Whats-App-Image-2025-10-04-at-12-09-28.jpg"
+         alt="Bolso con volantes y charm"
+         class="product-image">
+   	 <h3 class="product-name">Bolso Volantes + Charm</h3>
+   	 <p class="product-description">Bolso elegante con detalle de volantes y charm incluido.</p>
+   	 <p class="product-price">€ 45.00</p>
+	</div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/B21MnQbf/WhatsApp-Image-2025-08-11-at-09-20-27-2.jpg" alt="Set de Bolsos Acolchados con Estampado de Cítricos y Rayas" class="product-image">
+                <h3 class="product-name">Set Limoncello </h3>
+                <p class="product-description">Práctico y elegante set de bolsos acolchados con vibrante estampado de limones y diseño de rayas. Perfecto para organizar tus esenciales con estilo.</p>
+                <p class="product-price">€ 43.50 / set</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/bM2LLnfZ/WhatsApp-Image-2025-08-11-at-09-20-27-4.jpg" alt="Bolso grande veraniego con asas" class="product-image">
+                <h3 class="product-name">Bolso Nube</h3>
+                <p class="product-description">Amplio bolso ideal para tus salidas de verano, con un estampado vichy amarillo y asas resistentes. Perfecto para la playa o el día a día.</p>
+                <p class="product-price">€ 45.00</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/wrwmGhqm/WhatsApp-Image-2025-08-11-at-09-20-27-9.jpg" alt="Bolso grande estilo bohemio" class="product-image">
+                <h3 class="product-name">Bolso Marbella</h3>
+                <p class="product-description">Bolso espacioso y versátil con un diseño marítimo y detalles únicos. Ideal para un look casual.</p>
+                <p class="product-price">€ 45.00</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/p6VrctcM/WhatsApp-Image-2025-08-11-at-09-20-27-26.jpg" alt="Bolso Soleil" class="product-image">
+                <h3 class="product-name">Bolso Soleil</h3>
+                <p class="product-description">Bolso ligero y moderno con un diseño único, perfecto para añadir un toque de sol a tu estilo. Ideal para el día a día o eventos especiales.</p>
+                <p class="product-price">€ 49.50</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/RG018cwd/Whats-App-Image-2025-08-13-at-12-41-44.jpg" alt="Pack completo de accesorios para bebé" class="product-image">
+                <h3 class="product-name">Pack Completo Blanco y Rosa</h3>
+                <p class="product-description">Un completo set de accesorios esenciales, perfecto como regalo especial. Incluye varios artículos coordinados.</p>
+                <p class="product-price">€ 80.00 / pack</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/5WDPCknS/Whats-App-Image-2025-09-03-at-18-11-24-1.jpg" alt="Bolso tamaño S con asa regulable" class="product-image">
+                <h3 class="product-name">Bolso S</h3>
+                <p class="product-description">Bolso tamaño S con asa regulable, ideal para el día a día. Diseño compacto y funcional.</p>
+                <p class="product-price">€ 19.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/0RghH58H/Whats-App-Image-2025-09-03-at-18-11-23-6.jpg" alt="Tarjetero" class="product-image">
+                <h3 class="product-name">Tarjetero</h3>
+                <p class="product-description">Práctico tarjetero, perfecto para llevar tus tarjetas de forma organizada y segura.</p>
+                <p class="product-price">€ 7.50</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/3mBCXWxk/Whats-App-Image-2025-09-03-at-18-11-23-1.jpg" alt="Tarjetero" class="product-image">
+                <h3 class="product-name">Tarjetero</h3>
+                <p class="product-description">Práctico tarjetero, ideal para llevar tus tarjetas de forma organizada y segura. Se puede personalizar.</p>
+                <p class="product-price">€ 7.50</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/tMJrqrKH/Whats-App-Image-2025-09-03-at-18-11-23-4.jpg" alt="Pack de accesorios" class="product-image">
+                <h3 class="product-name">Pack vichy y flores </h3>
+                <p class="product-description">Un completo pack de accesorios seleccionados para ti, con un diseño único y personalizable.</p>
+                <p class="product-price">€ 90.50</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/d0QZmnHw/Whats-App-Image-2025-09-03-at-18-39-11.jpg" alt="Charm" class="product-image">
+                <h3 class="product-name">Charm</h3>
+                <p class="product-description">Charm único para personalizar tus bolsos o accesorios, aportando un toque de encanto y originalidad.</p>
+                <p class="product-price">€ 7.50</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/VpJWs8KS/Whats-App-Image-2025-09-16-at-18-34-45.jpg" alt="Charm" class="product-image">
+                <h3 class="product-name">Charm "Corazón"</h3>
+                <p class="product-description">Un charm adorable con diseño de corazón para añadir un toque personal y romántico a cualquier bolso o accesorio.</p>
+                <p class="product-price">€ 7.50</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/1fHpd7Vc/Whats-App-Image-2025-09-16-at-18-34-45-1.jpg" alt="Pack de accesorios con neceser, charm y tarjetero" class="product-image">
+                <h3 class="product-name">Pack Neceser S, Charm y Tarjetero</h3>
+                <p class="product-description">Un set completo de accesorios básicos: un neceser práctico para tus cosméticos, un charm para personalizar y un tarjetero para la organización diaria.</p>
+                <p class="product-price">€ 30.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/1Jqbz3jV/Whats-App-Image-2025-09-16-at-18-34-45-2.jpg" alt="Tarjetero" class="product-image">
+                <h3 class="product-name">Tarjeteros </h3>
+                <p class="product-description">Elegantes tarjeteros para el día a día. Compacto y funcional, perfecto para llevar tus tarjetas de manera segura y con estilo.</p>
+                <p class="product-price">€ 7.50</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/dJrB2gt2/Imagen-de-Whats-App-2025-11-02-a-las-10-52-01-b6e5cff6.jpg" alt="Bolso con volantes y charm" class="product-image">
+                <h3 class="product-name">Bolso Volantes + Charm</h3>
+                <p class="product-description">Bolso elegante con detalle de volantes y charm incluido.</p>
+                <p class="product-price">€ 45.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/S7cLgSSJ/Imagen-de-Whats-App-2025-11-02-a-las-10-52-01-f497a84c.jpg" alt="Tarjetero 7,50€" class="product-image">
+                <h3 class="product-name">Tarjetero</h3>
+                <p class="product-description">Tarjetero compacto y funcional, ideal para el día a día.</p>
+                <p class="product-price">€ 7.50</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/k6x93Gwj/Imagen-de-Whats-App-2025-11-02-a-las-10-52-02-3e3254e5.jpg" alt="Funda cinturones coche" class="product-image">
+                <h3 class="product-name">Funda cinturones coche</h3>
+                <p class="product-description">Pack de fundas acolchadas para cinturones de coche.</p>
+                <p class="product-price">€ 12.00 / pack</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/MyF84kvf/Imagen-de-Whats-App-2025-11-02-a-las-10-52-02-9fa445b6.jpg" alt="Charm 7,50€" class="product-image">
+                <h3 class="product-name">Charm</h3>
+                <p class="product-description">Charm decorativo para personalizar tus accesorios.</p>
+                <p class="product-price">€ 7.50</p>
+            </div>
+<div class="product-card">
+    <img src="https://i.ibb.co/QjPdxzpR/Whats-App-Image-2025-12-07-at-10-12-03-2.jpg" class="product-image">
+    <h3 class="product-name">Pack Corazones</h3>
+    <p class="product-description">Bolso, bandolera, funda iPad, tarjetero y cuelgamóvil.</p>
+    <p class="product-price">€ 84.00</p>
+</div>
+
+<div class="product-card">
+    <img src="https://i.ibb.co/twSdFSmR/Whats-App-Image-2025-12-07-at-10-12-03.jpg" class="product-image">
+    <h3 class="product-name">Tote Bag Reversible + Tarjetero</h3>
+    <p class="product-description">Tote bag reversible con tarjetero a juego.</p>
+    <p class="product-price">€ 40.00</p>
+</div>
+
+<div class="product-card">
+    <img src="https://i.ibb.co/pr3kHvw4/Whats-App-Image-2025-12-07-at-10-12-05-1.jpg" class="product-image">
+    <h3 class="product-name">Pitillera con cremallera</h3>
+    <p class="product-description">Pitillera con cierre.</p>
+    <p class="product-price">€ 16.50</p>
+</div>
+
+<div class="product-card">
+    <img src="https://i.ibb.co/N6539wxw/Whats-App-Image-2025-12-07-at-10-12-05-7.jpg" class="product-image">
+    <h3 class="product-name">Tarjetero con tres bolsillos</h3>
+    <p class="product-description">Tarjetero triple bolsillo.</p>
+    <p class="product-price">€ 12.00</p>
+            </div>
+        </div>     
+        <h2 class="section-title">Neceseres y Estuches</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/6JpzqFWr/WhatsApp-Image-2025-08-11-at-09-20-27-3.jpg" alt="Neceser con estampado de rayas y flores" class="product-image">
+                <h3 class="product-name">Neceser Vichy</h3>
+                <p class="product-description">Neceser práctico y compacto con un diseño en vichy amarillo. Ideal para tus productos de belleza o pequeños objetos. Disponible en otros colores.</p>
+                <p class="product-price">€ 16.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/cKZ913K5/WhatsApp-Image-2025-08-11-at-09-20-27-27.jpg" alt="Pack de diferentes neceseres" class="product-image">
+                <h3 class="product-name"> Pack funda libro y neceser talla S</h3>
+                <p class="product-description"> Funda para libro/ipad y neceser en diferentes tamaños y diseños, perfectos para organizar todo tipo de artículos, desde maquillaje hasta accesorios de viaje.</p>
+                <p class="product-price">€ 33.00 / pack</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/jv4LTvMQ/Whats-App-Image-2025-08-13-at-12-42-41-2.jpg" alt="Neceser M vichi rosa y rojo" class="product-image">
+                <h3 class="product-name">Neceser M Vichy (Rosa y Rojo)</h3>
+                <p class="product-description">Neceser de tamaño mediano con un vibrante estampado de cuadros vichy en tonos rosa y rojo. Ideal para organizar tus cosméticos o accesorios.</p>
+                <p class="product-price">€ 20.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/x8hb8hD3/Whats-App-Image-2025-08-13-at-12-42-41.jpg" alt="Neceser S tela gofre blanco y vichí" class="product-image">
+                <h3 class="product-name">Neceser S Gofre y Vichy</h3>
+                <p class="product-description">Neceser pequeño confeccionado en tela de gofre blanca combinada con detalles de vichy. Perfecto para llevar tus imprescindibles más pequeños.</p>
+                <p class="product-price">€ 15.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/jP63Nqhc/Whats-App-Image-2025-09-03-at-18-11-25.jpg" alt="Neceser tamaño S" class="product-image">
+                <h3 class="product-name">Neceser S</h3>
+                <p class="product-description">Neceser compacto y funcional, ideal para tus productos de belleza y pequeños objetos.</p>
+                <p class="product-price">€ 16.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/cK6WFr3d/Whats-App-Image-2025-09-03-at-18-11-24.jpg" alt="Neceser tamaño S" class="product-image">
+                <h3 class="product-name">Neceser S</h3>
+                <p class="product-description">Práctico neceser de tamaño pequeño, ideal para organizar tus imprescindibles.</p>
+                <p class="product-price">€ 16.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/1YFBvMbP/Whats-App-Image-2025-09-03-at-18-11-23.jpg" alt="Neceser tamaño S" class="product-image">
+                <h3 class="product-name">Neceser S</h3>
+                <p class="product-description">Neceser pequeño con un diseño único, perfecto para llevar tus cosméticos o accesorios.</p>
+                <p class="product-price">€ 16.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/j9R0SRKS/Whats-App-Image-2025-09-03-at-18-11-22-1.jpg" alt="Neceser tamaño M" class="product-image">
+                <h3 class="product-name">Neceser M</h3>
+                <p class="product-description">Neceser de tamaño mediano, ideal para viajes o para guardar objetos más grandes.</p>
+                <p class="product-price">€ 20.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/JR6PtWwn/Whats-App-Image-2025-09-03-at-18-11-22.jpg" alt="Pack neceser (M y S) más tarjetero" class="product-image">
+                <h3 class="product-name">Pack Neceser y Tarjetero</h3>
+                <p class="product-description">Completo set de neceseres en tamaño M y S, junto con un tarjetero, ideal para regalar o para un set de viaje coordinado.</p>
+                <p class="product-price">€ 40.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/Y7JVDnmR/Whats-App-Image-2025-09-16-at-18-34-45-7.jpg" alt="Neceser S con click para colgar en el carrito" class="product-image">
+                <h3 class="product-name">Neceser S para Carrito</h3>
+                <p class="product-description">Práctico neceser de tamaño pequeño, ideal para organizar tus imprescindibles. Incluye un click para colgarlo fácilmente del carrito de bebé.</p>
+                <p class="product-price">€ 17.00</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/ycCfp06S/Imagen-de-Whats-App-2025-11-02-a-las-10-52-01-8e428e4f.jpg" alt="Cesta S" class="product-image">
+                <h3 class="product-name">Cesta S</h3>
+                <p class="product-description">Cesta pequeña y práctica, ideal para organizar accesorios.</p>
+                <p class="product-price">€ 10.00</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/dsT9rWNK/Imagen-de-Whats-App-2025-11-02-a-las-10-52-01-e57a2e9b.jpg" alt="Neceser M" class="product-image">
+                <h3 class="product-name">Neceser M</h3>
+                <p class="product-description">Neceser mediano, perfecto para viajes y organización.</p>
+                <p class="product-price">€ 20.00</p>
+            </div>
+        </div>
+        <h2 class="section-title">Fundas y Accesorios Tech</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/YF5RhSzx/WhatsApp-Image-2025-08-11-at-09-20-26.jpg" alt="Cuelgamóvil con un alegre estampado de cuadros vichy en tonos rojos y rosa." class="product-image">
+                <h3 class="product-name">Cuelgamóvil cruzado</h3>
+                <p class="product-description">Cuelgamóvil con un alegre estampado de cuadros vichy en tonos rojos y rosa. Perfecta para personalizar tus bolsos o crear nuevos accesorios.</p>
+                <p class="product-price">€ 11.50</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/zWMhvnG9/WhatsApp-Image-2025-08-11-at-09-20-27-6.jpg" alt="Funda para ebook y cuelgamóvil (rosa)" class="product-image">
+                <h3 class="product-name">Funda "Lectura y Conexión" (Rosa)</h3>
+                <p class="product-description">Funda protectora para ebook y cuelgamóvil. Diseño práctico y elegante para llevar tus dispositivos seguros y a mano.</p>
+                <p class="product-price">€ 28.50</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/xKB9xZnD/WhatsApp-Image-2025-08-11-at-09-20-27-7.jpg" alt="Funda para ebook y cuelgamóvil (verde)" class="product-image">
+                <h3 class="product-name">Funda "Lectura y Conexión" (Verde)</h3>
+                <p class="product-description">Funda protectora para ebook y cuelgamóvil. Diseño práctico y elegante para llevar tus dispositivos seguros y a mano.</p>
+                <p class="product-price">€ 28.50</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/tPs7ck61/WhatsApp-Image-2025-08-11-at-09-20-27-8.jpg" alt="Funda para ebook y cuelgamóvil (marrón)" class="product-image">
+                <h3 class="product-name">Funda "Lectura y Conexión" (Marrón)</h3>
+                <p class="product-description">Funda protectora para ebook y cuelgamóvil. Diseño práctico y elegante para llevar tus dispositivos seguros y a mano.</p>
+                <p class="product-price">€ 28.50</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/bMT2QFSD/WhatsApp-Image-2025-08-11-at-09-20-27-22.jpg" alt="Funda para Kindle" class="product-image">
+                <h3 class="product-name">Funda Kindle "Comodidad Lectora"</h3>
+                <p class="product-description">Funda protectora para ebook y cuelgamóvil. Diseño práctico y elegante para llevar tus dispositivos seguros y a mano.</p>
+                <p class="product-price">€ 28.50</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/tpzVRH95/WhatsApp-Image-2025-08-11-at-09-20-27-23.jpg" alt="Cuelgamóvil y coletero a juego" class="product-image">
+                <h3 class="product-name">Pack Cuelgamóvil y Coletero "Esenciales Coordinados"</h3>
+                <p class="product-description">Incluye dos anillas. Conjunto práctico y estiloso de cuelgamóvil y coletero a juego. Perfecto para llevar tu móvil seguro y con estilo, ¡y un detalle para tu peinado!</p>
+                <p class="product-price">€ 14.50 / pack</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/DPWzw9sq/WhatsApp-Image-2025-08-11-at-09-20-27-24.jpg" alt="Pack de cuelgamóviles de diferentes colores" class="product-image">
+                <h3 class="product-name">Pack Cuelgamóvil (Anillas)</h3>
+                <p class="product-description">Pack de cuelgamóviles con una anilla (no cruzado), en diferentes colores y diseños. Personaliza tu móvil y dale un toque de alegría y originalidad cada día.</p>
+                <p class="product-price">€ 19.00 / pack</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/qMMG0V1P/Whats-App-Image-2025-08-13-at-12-42-41-4.jpg" alt="Cuelgamóvil de silicona" class="product-image">
+                <h3 class="product-name">Cuelgamóvil simple</h3>
+                <p class="product-description">Conjunto práctico y estiloso cuelgamóvil. Perfecto para llevar tu móvil seguro y con estilo.</p>
+                <p class="product-price">€ 9.50</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/DDqsZgrb/Whats-App-Image-2025-08-13-at-12-42-41-3.jpg" alt="Funda Ipad gofre blanco acolchada" class="product-image">
+                <h3 class="product-name">Funda iPad Gofre Acolchada</h3>
+                <p class="product-description">Funda acolchada para iPad en tela de gofre blanco, ofreciendo protección y un diseño elegante. Perfecta para el transporte diario.</p>
+                <p class="product-price">€ 20.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/zHxgT44k/Whats-App-Image-2025-08-13-at-12-42-41-1.jpg" alt="Funda kindle con lazo" class="product-image">
+                <h3 class="product-name">Funda Kindle con Lazo</h3>
+                <p class="product-description">Funda elegante para Kindle con un delicado lazo decorativo. Protege tu e-reader con estilo y comodidad.</p>
+                <p class="product-price">€ 16.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/N6zkw9wc/Whats-App-Image-2025-09-03-at-18-11-24-4.jpg" alt="Funda y tarjetero para ordenador" class="product-image">
+                <h3 class="product-name">Funda y Tarjetero</h3>
+                <p class="product-description">Set de funda y tarjetero para ordenador, perfecto para proteger tus dispositivos y llevar tus tarjetas.</p>
+                <p class="product-price">€ 23.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/k6BqKMF2/Whats-App-Image-2025-09-03-at-18-11-24-3.jpg" alt="Funda y tarjetero para ordenador" class="product-image">
+                <h3 class="product-name">Funda y Tarjetero</h3>
+                <p class="product-description">Funda y tarjetero para ordenador, con un diseño único y práctico.</p>
+                <p class="product-price">€ 23.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/Gvy8hp38/Whats-App-Image-2025-09-03-at-18-11-24-2.jpg" alt="Pack de fundas y tarjeteros para ordenador" class="product-image">
+                <h3 class="product-name">Pack Fundas y Tarjeteros</h3>
+                <p class="product-description">Pack de fundas y tarjeteros para ordenador, ideal para llevar todos tus accesorios tecnológicos.</p>
+                <p class="product-price">€ 40.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/LXqswBPW/Whats-App-Image-2025-09-03-at-18-11-23-5.jpg" alt="Funda kindle" class="product-image">
+                <h3 class="product-name">Funda Kindle</h3>
+                <p class="product-description">Funda protectora para Kindle, con un diseño elegante y funcional.</p>
+                <p class="product-price">€ 16.50</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/N6K1Jzrk/Whats-App-Image-2025-09-03-at-18-11-23-3.jpg" alt="Cuelgamóvil cruzado con dos anillas" class="product-image">
+                <h3 class="product-name">Cuelgamóvil Cruzado</h3>
+                <p class="product-description">Cuelgamóvil cruzado con dos anillas, perfecto para llevar tu móvil de forma segura y cómoda.</p>
+                <p class="product-price">€ 11.50</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/LdJpY2fp/Whats-App-Image-2025-09-03-at-18-11-23-2.jpg" alt="Funda kindle" class="product-image">
+                <h3 class="product-name">Funda Kindle</h3>
+                <p class="product-description">Funda protectora para Kindle, con un diseño único y práctico.</p>
+                <p class="product-price">€ 16.50</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/Gj7g6Xj/Whats-App-Image-2025-09-03-at-18-27-15.jpg" alt="Funda para portátil" class="product-image">
+                <h3 class="product-name">Funda para Portátil</h3>
+                <p class="product-description">Funda acolchada para portátil, con un diseño único que ofrece estilo y protección. Ideal para el transporte diario.</p>
+                <p class="product-price">€ 32.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/KkMvYWS/Whats-App-Image-2025-09-16-at-18-34-45-4.jpg" alt="Cuelgamóvil azul" class="product-image">
+                <h3 class="product-name">Cuelgamóvil Azul</h3>
+                <p class="product-description">Cuelgamóvil de un solo color, para llevar tu móvil de forma segura y cómoda. Se puede personalizar</p>
+                <p class="product-price">€ 11.50</p>
+            </div>
+             
+            <div class="product-card">
+                <img src="https://i.ibb.co/2RC21KJ/Whats-App-Image-2025-09-16-at-18-34-45-3.jpg" alt="Cuelgamóvil rosa" class="product-image">
+                <h3 class="product-name">Cuelgamóvil Rosa</h3>
+                <p class="product-description">Cuelgamóvil de un solo color, para llevar tu móvil de forma segura y cómoda. Se puede personalizar</p>
+                <p class="product-price">€ 11.50</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/ZpnTZJ4p/Imagen-de-Whats-App-2025-11-02-a-las-10-52-00-6f906c21.jpg" alt="Cuelga móvil cruzado" class="product-image">
+                <h3 class="product-name">Cuelga móvil cruzado</h3>
+                <p class="product-description">Cuelga móvil práctico y estiloso, perfecto para el día a día.</p>
+                <p class="product-price">€ 11.50</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/tTR8Mj7F/Imagen-de-Whats-App-2025-11-02-a-las-10-52-01-11d0d72b.jpg" alt="Cuelga móvil y tarjetero" class="product-image">
+                <h3 class="product-name">Cuelga móvil y tarjetero</h3>
+                <p class="product-description">Set de cuelga móvil con tarjetero a juego.</p>
+                <p class="product-price">€ 18.00</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/S4HZTLJC/Imagen-de-Whats-App-2025-11-02-a-las-10-52-01-4380c46b.jpg" alt="Estuche para agenda" class="product-image">
+                <h3 class="product-name">Estuche para agenda</h3>
+                <p class="product-description">Estuche práctico para proteger y organizar tu agenda.</p>
+                <p class="product-price">€ 12.00</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/N2PVS6kB/Imagen-de-Whats-App-2025-11-02-a-las-10-52-01-205824a9.jpg" alt="Cuelga móvil cruzado variante" class="product-image">
+                <h3 class="product-name">Cuelga móvil cruzado</h3>
+                <p class="product-description">Versión alternativa del cuelga móvil cruzado, ligero y cómodo.</p>
+                <p class="product-price">€ 11.50</p>
+            </div>
+<div class="product-card">
+    <img src="https://i.ibb.co/p9Qn8Vs/Whats-App-Image-2025-12-07-at-10-12-05.jpg" class="product-image">
+    <h3 class="product-name">Funda PC con volante</h3>
+    <p class="product-description">Funda acolchada con volante.</p>
+    <p class="product-price">€ 35.00</p>
+            </div>
+        </div>
+        <h2 class="section-title">Accesorios para Bebés e Infantil</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/3yf6wm34/WhatsApp-Image-2025-08-11-at-09-20-27-10.jpg" alt="Capazo para bebé para después del baño" class="product-image">
+                <h3 class="product-name">Manta/Arrullo acolchada para bebé</h3>
+                <p class="product-description">Suave y acogedora manta diseñada para el confort del bebé para un descanso tranquilo en cualquier lugar.</p>
+                <p class="product-price">€ 30.00</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/sJj3CXJC/WhatsApp-Image-2025-08-11-at-09-20-27-11.jpg" alt="Mochila para niño para viaje o colegio" class="product-image">
+                <h3 class="product-name">Mochila Infantil</h3>
+                <p class="product-description">Mochila divertida y espaciosa para los pequeños aventureros. Perfecta para el colegio, excursiones o llevar sus juguetes favoritos. Con posibilidad de bordado.</p>
+                <p class="product-price">€ 30.00</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/RTGC1J6Z/WhatsApp-Image-2025-08-11-at-09-20-27-12.jpg" alt="Pack bebé con mochila para carrito y otros productos" class="product-image">
+                <h3 class="product-name">Pack Bebé "Primeros Pasos"</h3>
+                <p class="product-description">Completo pack esencial para bebés, incluyendo un cambiador (35€), dos chupeteros con goma (5€/unidad) y una bandana (8€), ideal para el día a día.</p>
+                <p class="product-price">€ 53.00 / pack</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/LDSNjYxC/WhatsApp-Image-2025-08-11-at-09-20-27-5.jpg" alt="Mochila de bebé para el colegio" class="product-image">
+                <h3 class="product-name">Mochila Infantil </h3>
+                <p class="product-description">Mochila ligera y divertida con estampado de animalitos. Ideal para los más pequeños, perfecta para la guardería o el parque.</p>
+                <p class="product-price">€ 30.00</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/vvH7v49q/WhatsApp-Image-2025-08-11-at-09-20-27-13.jpg" alt="Pack bebé con varios accesorios" class="product-image">
+                <h3 class="product-name">Pack Bebé "Sueños Mágicos"</h3>
+                <p class="product-description">Set coordinado de accesorios esenciales para el bebé, incluye un arrullo (30€), cesta (25€), portapañales (25€) y chupetero (5€) ideal para regalar o para el cuidado diario. Incluye varios elementos.</p>
+                <p class="product-price">€ 85.00 / pack</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/Fkj13CR3/WhatsApp-Image-2025-08-11-at-09-20-27-14.jpg" alt="Porta documentos para bebé" class="product-image">
+                <h3 class="product-name">Porta pañales Bebé</h3>
+                <p class="product-description">Porta pañales para el bebé.</p>
+                <p class="product-price">€ 25.00</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/8D5PCvfc/WhatsApp-Image-2025-08-11-at-09-20-27-15.jpg" alt="Cajonera para bebé de tela" class="product-image">
+                <h3 class="product-name">Cesta Bebé "Orden Encantado"</h3>
+                <p class="product-description">Práctica cesta de tela, ideal para mantener organizada la ropita, pañales o juguetes del bebé en su habitación.</p>
+                <p class="product-price">€ 25.00</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/d0BjH1m0/WhatsApp-Image-2025-08-11-at-09-20-27-16.jpg" alt="Chupetero para bebé con forma de estrella" class="product-image">
+                <h3 class="product-name">Chupetero de bolas "Estrella Mágica"</h3>
+                <p class="product-description">Chupetero adorable con diseño de estrella, ideal para que el chupete de tu bebé esté siempre limpio y seguro a su alcance.</p>
+                <p class="product-price">€ 5.00</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/DD7XZMcj/WhatsApp-Image-2025-08-11-at-09-20-27-17.jpg" alt="Chupetero para bebé con diseño de luna" class="product-image">
+                <h3 class="product-name">Chupetero de goma "Luna Dulce"</h3>
+                <p class="product-description">Chupetero con un tierno diseño de luna, perfecto para acompañar el chupete de tu bebé y añadir un toque de encanto a su día.</p>
+                <p class="product-price">€ 7.00</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/5WytqZcX/WhatsApp-Image-2025-08-11-at-09-20-27-18.jpg" alt="Pack de mochila para carro, neceser y babero de bebé" class="product-image">
+                <h3 class="product-name">Pack Bebé "Comodidad en el Carro"</h3>
+                <p class="product-description">Completo set para el paseo del bebé: bolso organizador para el carro (55€), neceser (18€) a juego y una bandana absorbente (8€). ¡Todo lo que necesitas a mano!</p>
+                <p class="product-price">€ 81.00 / pack</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/VY321ZY7/WhatsApp-Image-2025-08-11-at-09-20-27-19.jpg" alt="Toalla de rizo con gorrito bebé" class="product-image">
+                <h3 class="product-name">Toalla de rizo con gorrito "Sueño Suave"</h3>
+                <p class="product-description">Delicada toalla para el bebé, perfecto para baños cómodos y seguros. Su diseño ligero lo hace fácil de transportar.</p>
+                <p class="product-price">€ 38.00</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/1Jnss6H5/WhatsApp-Image-2025-08-11-at-09-20-27-20.jpg" alt="Saco para carrito" class="product-image">
+                <h3 class="product-name">Saco para carrito</h3>
+                <p class="product-description">Saco para carrito compacto y acolchado, ideal para llevar a todas partes. Asegura la comodidad en cualquier momento.</p>
+                <p class="product-price">€ 58.00</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/Y49zz1By/WhatsApp-Image-2025-08-11-at-09-20-27-21.jpg" alt="Braguita de bebé y chupetero a juego" class="product-image">
+                <h3 class="product-name">Braguita y Chupetero "Juego de Estrellas"</h3>
+                <p class="product-description">Encantador conjunto de braguita suave para bebé y chupetero a juego. Ideal para un regalo o para completar el ajuar de los más pequeños. Incluye un mordedor</p>
+                <p class="product-price">€ 24.00 / set</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/vCPC41My/WhatsApp-Image-2025-08-11-at-09-20-27-25.jpg" alt="Mochila escolar y portameriendas" class="product-image">
+                <h3 class="product-name">Mochila Escolar y portameriendas</h3>
+                <p class="product-description">Mochila espaciosa y duradera para el colegio, con portameriendas incluido para el almuerzo. Diseño alegre y funcional para los más pequeños.</p>
+                <p class="product-price">€ 50.00 / pack</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/JWvWXkHZ/WhatsApp-Image-2025-08-11-at-09-20-27-28.jpg" alt="Portameriendas para el colegio" class="product-image">
+                <h3 class="product-name">Portameriendas "Dulce Recreo"</h3>
+                <p class="product-description">Compacto y práctico portameriandas con aislamiento térmico. Ideal para mantener la comida fresca y deliciosa durante el día escolar.</p>
+                <p class="product-price">€ 30.00</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/rGwkGSy7/Imagen-de-Whats-App-2025-11-02-a-las-10-51-59-5326e406.jpg" alt="Mochila infantil bordada" class="product-image">
+                <h3 class="product-name">Mochila Infantil Bordada</h3>
+                <p class="product-description">Mochila personalizada con bordado, ideal para los más pequeños.</p>
+                <p class="product-price">€ 38.00</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/1fMkFPQD/Imagen-de-Whats-App-2025-11-02-a-las-10-52-01-98b9c2b4.jpg" alt="Pañalera" class="product-image">
+                <h3 class="product-name">Pañalera</h3>
+                <p class="product-description">Bolso pañalera espacioso y práctico, ideal para organizar todo lo necesario para tu bebé.</p>
+                <p class="product-price">€ 30.00</p>
+            </div>
+        </div>
+        <h2 class="section-title">Mima a l@s profes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/Ldd3MQmP/WhatsApp-Image-2025-08-11-at-09-20-27-1.jpg" alt="Funda portátil Soleil con estampado de sellos de verano" class="product-image">
+                <h3 class="product-name">Funda portátil Soleil</h3>
+                <p class="product-description">Funda portátil Soleil que incluye un bolsillo exterior para guardar Ipad/Agenda y todo lo necesario para el cole.</p>
+                <p class="product-price">€ 32.00</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/yJ7Zndq/WhatsApp-Image-2025-08-11-at-09-20-27-29.jpg" alt="Bata de maestra" class="product-image">
+                <h3 class="product-name">Bata Maestra "Creativa y Cómoda"</h3>
+                <p class="product-description">Bata ligera funcional y reversible, diseñada para maestras y educadoras. Confeccionada con tejidos resistentes y un diseño que permite la máxima movilidad, con bolsillos en ambos lados.</p>
+                <p class="product-price">€ 39.50</p>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/yBsSGNpC/Imagen-de-Whats-App-2025-11-02-a-las-10-52-00-5e79894e.jpg" alt="Baby profes reversible tallas S,M y L" class="product-image">
+                <h3 class="product-name">Baby profes reversible</h3>
+                <p class="product-description">Reversible, disponible en tallas S, M y L. Ideal para el día a día en el aula.</p>
+                <p class="product-price">€ 39.50</p>
+            </div>
+        </div>
+
+        
+        <h2 class="section-title">Servicios Personalizados</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/mrRc8czC/WhatsApp-Image-2025-08-11-at-09-20-27-30.jpg" alt="Catálogo de precios de productos hechos a medida" class="product-image">
+                <h3 class="product-name">Productos Hechos a Medida</h3>
+                <p class="product-description">¿Tienes una idea única? Creamos productos exclusivos adaptados a tus necesidades. Consulta nuestro listado de precios detallado.</p>
+                <p class="product-price">Consultar Precios</p>
+            </div>
+        </div>
+
+        
+        <h2 class="section-title">Cintas y Adornos Especiales</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/BVW3VqLr/WhatsApp-Image-2025-08-11-at-09-20-27.jpg" alt="Cintas Decorativas con Margaritas y Ondas" class="product-image">
+                <h3 class="product-name">Cinta, pulsera y collar de margaritas onduladas</h3>
+                <p class="product-description">Conjunto de cintas (color personalizable) con delicadas margaritas y un divertido diseño ondulado. Pulsera 3€, Collar 7€ y cinturón a 12€ </p>
+                <p class="product-price">€ 19.00 / pack</p>
+            </div>	
+        </div>
+    </main>
+
+    
+    <footer class="footer">
+        <p>© 2024 Chippa. Cose y Crea con Magia. Todos los derechos reservados.</p>
+        <p>Síguenos en <a href="#" target="_blank">Instagram</a> | <a href="#" target="_blank">Facebook</a></p>
+    </footer>
+
+
+</body></html>
